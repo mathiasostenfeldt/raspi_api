@@ -17,7 +17,7 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('foo', function () {
+$router->get('/foo', function () {
     return 'Hello World';
 });
 
@@ -25,7 +25,7 @@ $router->get('/lights/turnonlight', 'LightsController@turnOnLight');
 $router->get('/lights/turnofflight', 'LightsController@turnOffLight');
 $router->get('/lights/dimmlight/{$amount}', 'LightsController@dimmLight');
 
-$router->get('temperature/gettemperature', 'TemperatureController@getTemperature'); 
+$router->get('/temperature/gettemperature', 'TemperatureController@getTemperature'); 
 
 
 
