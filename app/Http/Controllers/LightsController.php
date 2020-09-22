@@ -33,6 +33,7 @@ class LightsController extends Controller
         //check state off light
         $isOn = true;
         //try turn on
+        exec('sudo python grove_led_blink.py');
         return $isOn ? true : false;
     }
 
