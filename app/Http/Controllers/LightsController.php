@@ -1,9 +1,13 @@
 <?php
 
+
 namespace App\Http\Controllers;
+
+use PhpGpio\Gpio;
 
 class LightsController extends Controller
 {
+    
     /**
      * Create a new controller instance.
      *
@@ -11,7 +15,7 @@ class LightsController extends Controller
      */
     public function __construct()
     {
-        //
+        
     }
 
     public function dimLight($amount)
@@ -33,7 +37,17 @@ class LightsController extends Controller
         //check state off light
         $isOn = true;
         //try turn on
-        exec('sudo python ../../../../../python-scripts/turnonlight.py');
+        $gpio = new Gpio();
+        $gpio->setup(18, 'out');
+        while(true) {
+            // To Switch ON the LED
+            $gpio->output(18, 1);
+            sleep(1);
+            // To Switch OFF the LED
+            $gpio->output(18, 0);
+            sleep(1);
+            break;
+        }
         return $isOn ? true : false;
     }
 

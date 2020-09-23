@@ -11,8 +11,6 @@
 |
 */
 
-use App\Http\Controllers\LightsController;
-
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
