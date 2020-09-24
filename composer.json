@@ -8,6 +8,7 @@
         "php": "^7.2.5",
         "guzzlehttp/guzzle": "^7.0",
         "laravel/lumen-framework": "^7.0",
+        "piphp/gpio": "^0.4.0",
         "ronanguilloux/php-gpio": "^1.0"
     },
     "require-dev": {

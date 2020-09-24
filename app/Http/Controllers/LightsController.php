@@ -3,7 +3,8 @@
 
 namespace App\Http\Controllers;
 
-use PhpGpio\Gpio;
+use PiPHP\GPIO\GPIO;
+use PiPHP\GPIO\Pin\PinInterface;
 
 class LightsController extends Controller
 {
@@ -35,19 +36,16 @@ class LightsController extends Controller
     {
         $isOn = false;
         //check state off light
+
         $isOn = true;
         //try turn on
-        $gpio = new Gpio();
-        $gpio->setup(18, 'out');
-        while(true) {
-            // To Switch ON the LED
-            $gpio->output(18, 1);
-            sleep(1);
-            // To Switch OFF the LED
-            $gpio->output(18, 0);
-            sleep(1);
-            break;
-        }
+        
+        $gpio = new GPIO();
+        
+        $pin = $gpio->getOutputPin(4);
+        return $pin;
+        $pin->setValue(PinInterface::VALUE_HIGH);
+        
         return $isOn ? true : false;
     }
 

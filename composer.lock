@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b022159b99560d585fee53e1c0e944d4",
+    "content-hash": "cf9816abc55be40fe19b2f40952173f1",
     "packages": [
         {
             "name": "brick/math",
@@ -2245,6 +2245,52 @@
                 }
             ],
             "time": "2020-07-20T17:29:33+00:00"
+        },
+        {
+            "name": "piphp/gpio",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PiPHP/GPIO.git",
+                "reference": "9288aa1b56c7ca85b182bbfb5225313ca7354093"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PiPHP/GPIO/zipball/9288aa1b56c7ca85b182bbfb5225313ca7354093",
+                "reference": "9288aa1b56c7ca85b182bbfb5225313ca7354093",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3||^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PiPHP\\GPIO\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrew Carter",
+                    "email": "andrewcarter1992@gmail.com"
+                }
+            ],
+            "description": "A library for accessing the GPIO pins on a Raspberry Pi",
+            "keywords": [
+                "GPIO",
+                "pi",
+                "pin",
+                "pins",
+                "raspberry"
+            ],
+            "time": "2020-08-24T13:50:12+00:00"
         },
         {
             "name": "psr/container",
