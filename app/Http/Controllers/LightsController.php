@@ -3,9 +3,6 @@
 
 namespace App\Http\Controllers;
 
-use PiPHP\GPIO\GPIO;
-use PiPHP\GPIO\Pin\PinInterface;
-
 class LightsController extends Controller
 {
     
@@ -36,15 +33,12 @@ class LightsController extends Controller
     {
         $isOn = false;
         //check state off light
-
+        $command = escapeshellcmd('../../python-scripts/turnonalllight.py');
+        $output = shell_exec($command);
+        echo $output;
         $isOn = true;
         //try turn on
         
-        $gpio = new GPIO();
-        
-        $pin = $gpio->getOutputPin(4);
-        return $pin;
-        $pin->setValue(PinInterface::VALUE_HIGH);
         
         return $isOn ? true : false;
     }
