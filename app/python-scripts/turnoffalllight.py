@@ -40,16 +40,4 @@ from grovepi import *
 led = 4
 
 pinMode(led,"OUTPUT")
-
-print ("This will turn off LED")
-print ("Connect the LED to the port labele D4!" )
-
-while True:
-    try:
-        #Blink the LED
-        digitalWrite(led,0)             # Send LOW to switch on LED
-    except KeyboardInterrupt:   # Turn LED off before stopping
-        digitalWrite(led,0)
-        break
-    except IOError:                             # Print "Error" if communication error encountered
-        print ("Error")
+digitalWrite(led,0)             # Send LOW to switch on LED
