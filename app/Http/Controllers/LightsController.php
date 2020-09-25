@@ -33,7 +33,7 @@ class LightsController extends Controller
     {
         $isOn = false;
         //check state off light
-        $command = escapeshellcmd('sudo python sudo /var/www/html/raspi_api/app/python-scripts/turnonalllight.py');
+        $command = escapeshellcmd('sudo python /var/www/html/raspi_api/app/python-scripts/turnonalllight.py');
         $output = shell_exec($command);
         echo $output;
         $isOn = true;
@@ -47,7 +47,7 @@ class LightsController extends Controller
     {
         $isOff = false;
         //check state off light
-        $command = escapeshellcmd('sudo python sudo /var/www/html/raspi_api/app/python-scripts/turnoffalllight.py');
+        $command = escapeshellcmd('sudo python /var/www/html/raspi_api/app/python-scripts/turnoffalllight.py');
         $output = shell_exec($command);
         echo $output;
         $isOff = true;
