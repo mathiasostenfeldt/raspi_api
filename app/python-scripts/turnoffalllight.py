@@ -39,10 +39,10 @@ from grovepi import *
 # Connect the Grove LED to digital port D4
 led = 4
 pinMode(led,"OUTPUT")
-digitalWrite(led,1)
+digitalWrite(led,0)
 led = 3
 pinMode(led,"OUTPUT")
-digitalWrite(led,1)
+digitalWrite(led,0)
 led = 2
 pinMode(led,"OUTPUT")
-digitalWrite(led,1)           # Send LOW to switch on LED
+digitalWrite(led,0)           # Send LOW to switch on LED
