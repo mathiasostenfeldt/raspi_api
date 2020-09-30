@@ -8,4 +8,4 @@ dht_sensor_port = 7             # Connect the DHt sensor to port 7
 [ temp,hum ] = dht(dht_sensor_port,1)           #Get the temperature and Humidity from the DHT sensor
 t = str(temp)
 h = str(hum)
-print(t)
+print("temp: ", t)
