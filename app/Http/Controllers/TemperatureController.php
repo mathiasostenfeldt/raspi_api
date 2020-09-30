@@ -24,9 +24,8 @@ class TemperatureController extends Controller
         exec($command,$out,$ret);
         
         foreach ($out as $line){
-            print "$line\n";
+            return $line;
         }
-        echo $ret;
         //return $temp;
     }
 }
