@@ -3,6 +3,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Client\Request;
+
 class LightsController extends Controller
 {
     
@@ -64,11 +66,11 @@ class LightsController extends Controller
     }
 
 
-    public function turnOnInRoom(){
+    public function turnOnInRoom(string $input){
         
         $isOn = false;
         //check state off light
-        $command = escapeshellcmd('sudo python /var/www/html/raspi_api/app/python-scripts/turnonalllight.py 4');
+        $command = escapeshellcmd('sudo python /var/www/html/raspi_api/app/python-scripts/turnoninroom.py $input');
         $output = shell_exec($command);
         echo $output;
         $isOn = true;

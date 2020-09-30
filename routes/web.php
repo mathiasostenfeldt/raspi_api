@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Controllers\LightsController;
+
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
@@ -22,7 +24,15 @@ $router->get('/foo', function () {
 $router->get('/lights/getallroomswithlight', 'LightsController@getAllRoomsWithLight');
 $router->get('/lights/turnonlight', 'LightsController@turnOnLight');
 $router->get('/lights/turnofflight', 'LightsController@turnOffLight');
-$router->get('/lights/turnoninroom', 'LightsController@turnOnInRoom');
+
+$router->post('/lights/turnoninroom', function (\Illuminate\Http\Request $request)
+{
+    
+    $room = $request->input('room');
+    echo $room;
+   (new LightsController())->turnOnInRoom($room);
+   
+});
 
 $router->get('/lights/dimmlight/{$amount}', 'LightsController@dimmLight');
 
