@@ -68,13 +68,15 @@ class LightsController extends Controller
 
     public function turnOnInRoom(string $input){
         
-        $isOn = false;
-        //check state off light
         $command = escapeshellcmd('sudo python /var/www/html/raspi_api/app/python-scripts/turnoninroom.py ' . escapeshellarg($input));
         $output = shell_exec($command);
         echo $output;
-        $isOn = true;
-        //try turn on
+    }
 
+    public function turnOffInRoom(string $input){
+        
+        $command = escapeshellcmd('sudo python /var/www/html/raspi_api/app/python-scripts/turnoffinroom.py ' . escapeshellarg($input));
+        $output = shell_exec($command);
+        echo $output;
     }
 }

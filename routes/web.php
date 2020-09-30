@@ -34,6 +34,15 @@ $router->post('/lights/turnoninroom', function (\Illuminate\Http\Request $reques
    
 });
 
+$router->post('/lights/turnoffinroom', function (\Illuminate\Http\Request $request)
+{
+    
+    $room = $request->input('room');
+    echo $room;
+   (new LightsController())->turnOffInRoom($room);
+   
+});
+
 $router->get('/lights/dimmlight/{$amount}', 'LightsController@dimmLight');
 
 $router->get('/temperature/gettemperature', 'TemperatureController@getTemperature'); 
