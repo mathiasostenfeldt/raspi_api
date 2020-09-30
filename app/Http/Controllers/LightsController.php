@@ -58,7 +58,8 @@ class LightsController extends Controller
 
     public function getAllRoomsWithLight(){
         
-        return ["koekken", "stue", "vaerelse"];
+        $rooms = ["koekken", "stue", "vaerelse"];
+        return json_encode($rooms);
 
     }
 }

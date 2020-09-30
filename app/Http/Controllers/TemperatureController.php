@@ -20,9 +20,12 @@ class TemperatureController extends Controller
         // Use current position....
         //$long = 10.268713;
         //$lat = 55.456375;
-        $response = Http::get('http://fcc-weather-api.glitch.me/api/current?lon=10.268713&lat=55.456375');
-        $result = json_decode($response);
-        $temp = $response['main']['temp'];
-        return $temp;
+        $command = escapeshellcmd('sudo python /var/www/html/raspi_api/app/python-scripts/gettemp.py');
+        exec($command,$out,$ret);
+        echo($ret);
+        echo($out);
+        print $ret;
+        print $out;
+        //return $temp;
     }
 }
