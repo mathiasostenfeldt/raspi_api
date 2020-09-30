@@ -70,7 +70,7 @@ class LightsController extends Controller
         
         $isOn = false;
         //check state off light
-        $command = escapeshellcmd('sudo python /var/www/html/raspi_api/app/python-scripts/turnoninroom.py $input');
+        $command = escapeshellcmd('sudo python /var/www/html/raspi_api/app/python-scripts/turnoninroom.py ' . escapeshellarg($input));
         $output = shell_exec($command);
         echo $output;
         $isOn = true;
