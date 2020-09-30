@@ -22,10 +22,11 @@ class TemperatureController extends Controller
         //$lat = 55.456375;
         $command = escapeshellcmd('sudo python /var/www/html/raspi_api/app/python-scripts/gettemp.py');
         exec($command,$out,$ret);
-        echo($ret);
-        echo($out);
-        print $ret;
-        print $out;
+        
+        foreach ($out as $line){
+            print "$line\n";
+        }
+        echo $ret;
         //return $temp;
     }
 }
