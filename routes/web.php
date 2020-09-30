@@ -22,6 +22,8 @@ $router->get('/foo', function () {
 $router->get('/lights/getallroomswithlight', 'LightsController@getAllRoomsWithLight');
 $router->get('/lights/turnonlight', 'LightsController@turnOnLight');
 $router->get('/lights/turnofflight', 'LightsController@turnOffLight');
+$router->get('/lights/turnoninroom', 'LightsController@turnOnInRoom');
+
 $router->get('/lights/dimmlight/{$amount}', 'LightsController@dimmLight');
 
 $router->get('/temperature/gettemperature', 'TemperatureController@getTemperature'); 

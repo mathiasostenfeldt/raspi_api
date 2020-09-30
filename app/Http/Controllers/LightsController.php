@@ -62,4 +62,17 @@ class LightsController extends Controller
         return json_encode($rooms);
 
     }
+
+
+    public function turnOnInRoom(){
+        
+        $isOn = false;
+        //check state off light
+        $command = escapeshellcmd('sudo python /var/www/html/raspi_api/app/python-scripts/turnonalllight.py 1');
+        $output = shell_exec($command);
+        echo $output;
+        $isOn = true;
+        //try turn on
+
+    }
 }
