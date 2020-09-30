@@ -54,4 +54,11 @@ class LightsController extends Controller
         //try turn on
         return $isOff ? true : false;
     }
+
+
+    public function getAllRoomsWithLight(){
+        
+        return ["koekken", "stue", "vaerelse"];
+
+    }
 }

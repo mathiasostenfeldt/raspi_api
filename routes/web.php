@@ -19,6 +19,7 @@ $router->get('/foo', function () {
     return 'Hello World';
 });
 
+$router->get('/lights/getallroomswithlight', 'LightsController@getAllRoomsWithLight');
 $router->get('/lights/turnonlight', 'LightsController@turnOnLight');
 $router->get('/lights/turnofflight', 'LightsController@turnOffLight');
 $router->get('/lights/dimmlight/{$amount}', 'LightsController@dimmLight');
